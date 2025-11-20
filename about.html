@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cure Bites - About</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f0fdf4, #d1fae5);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      display: flex;
+      justify-content: space-between; /* logo left, nav right */
+      align-items: center;
+      background: linear-gradient(to right, #059669, #047857);
+      color: white;
+      padding: 16px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .logo h1 {
+      font-size: 1.8em;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .logo p {
+      margin: 4px 0 0;
+      font-size: 0.95em;
+      color: #e0f2f1;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end; /* aligns links to right */
+      align-items: center;
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #facc15;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h2 {
+      font-size: 2em;
+      color: #047857;
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .about-text span {
+      font-weight: bold;
+      color: #047857;
+    }
+
+    .about-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-image img {
+      max-height: 256px;
+      width: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      object-fit: cover;
+    }
+
+    /* ---------- FEATURES SECTION ---------- */
+    .features-section {
+      background-color: white;
+      padding: 60px 20px;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .features-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .feature-box {
+      background-color: #f0fdf4;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .feature-box:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .feature-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .feature-icon {
+      background-color: #059669;
+      color: white;
+      padding: 12px;
+      border-radius: 50%;
+      font-size: 1.2em;
+    }
+
+    .feature-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #047857;
+    }
+
+    /* ---------- CTA SECTION ---------- */
+    .cta-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .cta-section h3 {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+
+    .cta-button {
+      background-color: #facc15;
+      color: black;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #fde047;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background-color: #059669;
+      color: white;
+      text-align: center;
+      padding: 24px 20px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <h1>Cure Bites</h1>
+      <p>Healing through food, one bite at a time</p>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/menu">Menu</a>
+      <a href="/subscription">Subscription</a>
+      <a href="/sign">Log in</a>
+      <a href="/contact">Contact Us</a>
+      <a href="/reviews">Review</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT RENDERED VIA JS -->
+  <script>
+    // ---------- OOP STRUCTURE ----------
+
+    class Section {
+      constructor(tag, className) {
+        this.element = document.createElement(tag);
+        if (className) this.element.className = className;
+      }
+
+      render(parent = document.body) {
+        parent.appendChild(this.element);
+      }
+    }
+
+    class About extends Section {
+      constructor(title, text, imageSrc) {
+        super("section", "section");
+        this.title = title;
+        this.text = text;
+        this.imageSrc = imageSrc;
+      }
+
+      render(parent) {
+        super.render(parent);
+        this.element.innerHTML = `
+          <div class="about-grid">
+            <div class="about-text">
+              <h2>${this.title}</h2>
+              <p>${this.text}</p>
+            </div>
+            <div class="about-image">
+              <img src="${this.imageSrc}" alt="${this.title}">
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    class FeatureBox {
+      constructor(icon, title, description) {
+        this.icon = icon;
+        this.title = title;
+        this.description = description;
+      }
+
+      createElement() {
+        const div = document.createElement("div");
+        div.className = "feature-box";
+        div.innerHTML = `
+          <div class="feature-header">
+            <div class="feature-icon">${this.icon}</div>
+            <div class="feature-title">${this.title}</div>
+          </div>
+          <p>${this.description}</p>
+        `;
+        return div;
+      }
+    }
+
+    class Features extends Section {
+      constructor(features) {
+        super("section", "features-section");
+        this.features = features;
+      }
+
+      render(parent) {
+        super.render(parent);
+        const grid = document.createElement("div");
+        grid.className = "features-grid";
+        this.features.forEach(feature => grid.appendChild(feature.createElement()));
+        this.element.appendChild(grid);
+      }
+    }
+
+    class CallToAction extends Section {
+      constructor(heading, buttonText, buttonLink) {
+        super("section", "cta-section");
+        this.heading = heading;
+        this.buttonText = buttonText;
+        this.buttonLink = buttonLink;
+      }
+
+      render(parent) {
+        super.render(parent);
+        this.element.innerHTML = `
+          <h3>${this.heading}</h3>
+          <a href="${this.buttonLink}" class="cta-button">${this.buttonText}</a>
+        `;
+      }
+    }
+
+    class Footer extends Section {
+      constructor(text) {
+        super("footer");
+        this.text = text;
+      }
+
+      render(parent) {
+        super.render(parent);
+        this.element.innerHTML = `<p>${this.text}</p>`;
+      }
+    }
+
+    // ---------- PAGE INITIALIZATION ----------
+    class AboutPage {
+      constructor() {
+        this.about = new About(
+          "Our Story",
+          `Cure Bites is dedicated to transforming lives through our personalized nutrition.
+           Our mission is to provide <span>delicious, health-focused meals</span> tailored to your specific needs.`,
+          "doctor.jpg"
+        );
+        this.features = new Features([
+          new FeatureBox("✔", "Expert-Approved", "All our meal plans are designed under the guidance of certified nutritionists and reviewed by medical professionals."),
+          new FeatureBox("👨‍🍳", "Chef-Crafted", "Our meals are prepared by experienced chefs to ensure they meet your dietary needs and taste amazing.")
+        ]);
+        this.cta = new CallToAction("Start your Healthy Journey Today", "Know More", "#");
+        this.footer = new Footer("&copy; 2025 Cure Bites | All Rights Reserved");
+      }
+
+      render() {
+        this.about.render(document.body);
+        this.features.render(document.body);
+        this.cta.render(document.body);
+        this.footer.render(document.body);
+      }
+    }
+
+    // Render the full page
+    const page = new AboutPage();
+    page.render();
+  </script>
+
+</body>
+</html>

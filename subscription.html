@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CureBites - Healing Plans</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: clamp(14px, 2vw, 18px); /* fluid typography */
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #e2ecdd;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    body {
+  border: 10px solid #4caf50;   /* green border around the page */
+  margin: 0;                    /* remove default spacing */
+  padding: 0;
+  min-height: 100vh;            /* ensures border covers full height */
+  box-sizing: border-box;
+}
+
+
+
+    /* Header */
+    header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #fff;
+  flex-wrap: wrap;
+
+  position: sticky;   /* ✅ makes it stick */
+  top: 0;             /* ✅ sticks to top */
+  z-index: 1000;      /* ✅ stays above other content */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    header img {
+      height: 65px;
+      width: auto;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      margin: 0 0.8rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #0c7a33;
+    }
+    .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      color: green;
+    }
+
+    .hero p {
+      color:black;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    /* Plans Section */
+    .plans {
+      display: flex;
+      flex-wrap:wrap;
+      gap: 1.5rem;
+      padding: 2rem 5%;
+      justify-content: center;
+    }
+    .plan-card {
+  flex: 0 1 30%;   /* ~3 per row */
+  max-width: 300px;
+  min-width: 250px;
+}
+
+    .plan-card {
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+      transition: transform 0.3s;
+      max-width: 300px; /* keeps cards from stretching too wide */
+      margin: 0 auto;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .plan-card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-card p {
+      margin: 0.5rem 0;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .plan-card ul {
+      margin: 0.8rem 0;
+      padding-left: 1.2rem;
+    }
+
+    .plan-card ul li {
+      margin-bottom: 0.4rem;
+      list-style: "✔ ";
+      color: black;
+      font-size: 1 rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: auto;
+      padding: 0.8rem 1.2rem;
+      background: #0c7a33;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0a5d27;
+    }
+
+    /* Different background colors */
+    .trial { background: #e7b96a; }
+    .daily { background: #9dec87; }
+    .weekly { background: #d7e56e; }
+    .monthly { background: #ed9898; }
+    .family { background: #9dec87; }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0.5rem 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+    @media (max-width: 900px) {
+  .plans {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .plans {
+    grid-template-columns: 1fr; /* 1 per row on mobiles */
+  }
+}
+
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <!-- Replace with your actual logo path -->
+      <img src="logo.jpg" alt="CureBites Logo">
+      CureBites
+    </div>
+    <nav>
+                <!-- navigation.html -->
+                 <div class="container">
+
+                <nav>
+                    <ul style="list-style: none; display: flex; gap: 15px;">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us </a></li>
+                        <li><a href="/menu">Menu</a></li>
+                        <li><a href="/sign">Log in</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/reviews">Review</a></li>
+                    </ul>
+                </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Choose your Healing Plan</h1>
+    <p>Flexible, nutritious meal plans tailored for your lifestyle</p>
+  </section>
+
+  <!-- Plans Section -->
+  <section class="plans">
+    <div class="plan-card trial">
+      <h2>Trial pack</h2>
+      <p>1 meal per day for 3 days</p>
+      <ul>
+        <li>Customized to condition (e.g. diabetic-friendly, low-salt, gluten-free)</li>
+        <li>Lets customer experience before subscribing</li>
+      </ul>
+      <a href="#" class="btn">Get started →</a>
+    </div>
+
+    <div class="plan-card daily">
+      <h2>Daily meal Plan</h2>
+      <p><strong>₹180–₹220</strong></p>
+      <ul>
+        <li>Per meal depending on customization</li>
+      </ul>
+      <a href="#" class="btn">Get Started →</a>
+    </div>
+
+    <div class="plan-card weekly">
+      <h2>Weekly Plan</h2>
+      <p><strong>₹11,500 (₹128/meal)</strong></p>
+      <ul>
+        <li>Most cost-effective, builds loyalty</li>
+      </ul>
+      <a href="#" class="btn">Get started →</a>
+    </div>
+
+    <div class="plan-card monthly">
+      <h2>Monthly plan</h2>
+      <p><strong>₹11,500 (₹128/meal)</strong></p>
+      <ul>
+        <li>Most cost-effective, builds loyalty</li>
+      </ul>
+      <a href="#" class="btn">Get started →</a>
+    </div>
+
+    <div class="plan-card family">
+      <h2>Family health plan</h2>
+      <p>Meals for 2–4 members</p>
+      <ul>
+        <li>Each member gets customized meals</li>
+        <li>Suitable for elderly, kids, and families</li>
+      </ul>
+      <a href="#" class="btn">Get started →</a>
+    </div>
+  </section>
+
+</body>
+</html>
