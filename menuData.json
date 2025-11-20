@@ -1,0 +1,27 @@
+[
+    {"id": "b1", "name": "Moonglet Cheela", "img": "moonglet cheela.png", "category": "Breakfast"},
+    {"id": "b2", "name": "Multigrain Paratha", "img": "multigrain paratha.png", "category": "Breakfast"},
+    {"id": "b3", "name": "Beteroot Dhokola", "img": "Beteroot Dhokala.png", "category": "Breakfast"},
+    {"id": "b4", "name": "Jackfout Indian salsa", "img": "Jackfout Indian salsa.png", "category": "Breakfast"},
+    {"id": "b5", "name": "Poha Seeds", "img": "Poha Seeds.png", "category": "Breakfast"},
+    {"id": "b6", "name": "Chia Yogurt", "img": "Chia Yogurt.png", "category": "Breakfast"},
+    
+    {"id": "l1", "name": "Thali", "img": "thali.png", "category": "Lunch"},
+    {"id": "l2", "name": "Brown Rice Khichdi", "img": "brown rice khichdi.png", "category": "Lunch"},
+    {"id": "l3", "name": "Soya Chaap Curry Jea Rice", "img": "Soya Chaap Curry Jea Rice.png", "category": "Lunch"},
+    {"id": "l4", "name": "Soya Chaap Rice", "img": "Soya Chaap Rice.png", "category": "Lunch"},
+    {"id": "l5", "name": "Multigrain roti", "img": "Multigrain roti.png", "category": "Lunch"},
+
+    {"id": "s1", "name": "Palak Paneer Multigrain rotis", "img": "Palak Paneer Multigrain rotis.png", "category": "Signature Dishes"},
+    {"id": "s2", "name": "Louki koofa Bajra rotis", "img": "Louki koofa Bajra rotis.png", "category": "Signature Dishes"},
+    {"id": "s3", "name": "Dagi rotis", "img": "dagi roti.png", "category": "Signature Dishes"},
+    {"id": "s4", "name": "Ragi Dosas", "img": "Ragi Dosas.png", "category": "Signature Dishes"},
+    {"id": "s5", "name": "Pumpkin & Spinach Curry", "img": "Pumpkin & Spinach Spinach Curry.png", "category": "Signature Dishes"},
+    {"id": "s6", "name": "Pumpkin & Spinach Brown Rice", "img": "Pumpkin & Spinach Brown Rice.png", "category": "Signature Dishes"},
+
+    {"id": "d1", "name": "Oats & Dates Ladoo", "img": "Oats & Dates Ladoo.png", "category": "Desserts"},
+    {"id": "d2", "name": "Ragi & Jaggery Brownie", "img": "Ragi & Jaggery Brownie.png", "category": "Desserts"},
+    {"id": "d3", "name": "Ragi & Paneer", "img": "Ragi & Paneer.png", "category": "Desserts"},
+    {"id": "d4", "name": "Millet & Almond Milk Kheer", "img": "Millet & Almond Milk Kheer.png", "category": "Desserts"},
+    {"id": "d5", "name": "Low-fat Cheesecake", "img": "Low-fat Cheesecake.png", "category": "Desserts"}
+]

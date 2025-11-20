@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #61A362;
+            --secondary-light-color: #d7f5d8; /* Added for link hover */
+            --background-color: #F0FBF0;
+            --card-background: #F8FAF8;
+            --text-color: #333;
+            --light-text-color: #666;
+            --input-background: #E8F5E9;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #d7f5d8;
+        }
+
+        /* --- BEAUTIFIED NAVIGATION STYLES START --- */
+        .header {
+            background-color: var(--card-background); /* White background for header */
+            border-bottom: 2px solid var(--secondary-light-color); /* Light separator */
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+            padding: 0 5%;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px; /* Taller header for a modern feel */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 5px; /* Reduced gap to use padding for spacing */
+            align-items: center;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: var(--light-text-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: block; /* Make the whole padding area clickable */
+        }
+        
+        /* Hover for standard links */
+        .nav-list li a:not(.login-btn):hover {
+            background-color: var(--secondary-light-color);
+            color: var(--primary-color);
+        }
+        
+        /* Log In Button Styling */
+        .login-btn {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 10px 20px !important;
+            margin-left: 15px;
+            font-weight: 600 !important;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(97, 163, 98, 0.4);
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .login-btn:hover {
+            background-color: #5aa15b; /* Slightly darker primary color */
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(97, 163, 98, 0.6);
+        }
+
+        /* Responsive Navigation (Hides nav items on small screens) */
+        @media (max-width: 900px) {
+            .header-content {
+                height: 60px;
+            }
+            .nav-list {
+                display: none; /* In a real app, this would be a hamburger menu */
+            }
+        }
+        /* --- BEAUTIFIED NAVIGATION STYLES END --- */
+
+
+        .main-content {
+            text-align: center;
+            padding: 50px 5%;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--light-text-color);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .form-section, .info-section {
+            background-color: var(--card-background);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow-color);
+        }
+
+        .form-section {
+            flex: 1.5;
+            text-align: left;
+        }
+
+        .info-section {
+            flex: 1;
+            text-align: left;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+
+        .input-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background-color: var(--input-background);
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .send-message-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .send-message-btn:hover {
+            background-color: #5aa15b;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .info-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .info-item h4 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .info-item p {
+            margin: 0;
+            color: var(--light-text-color);
+            font-size: 0.9rem;
+        }
+
+        .map-section {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow-color);
+        }
+
+        .map-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 900px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .input-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            input, select, textarea {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- UPDATED HTML FOR NAVIGATION BAR -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="final_logo.jpg" alt="Cure Bites Logo" class="logo-img">
+                <span class="logo-text">Cure Bites</span>
+            </div>
+            
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/menu">Menu</a></li>
+                    <li><a href="/subscription">Subscription</a></li>
+                    <li><a href="/reviews">Reviews</a></li>
+                    <!-- Log In link is styled as a distinct button -->
+                    <li><a href="/signin" class="login-btn">Log in</a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="subtitle">We'd love to hear from you. Reach out with questions, feedback, or support.</p>
+
+        <div class="contact-container">
+            <div class="form-section">
+                <form action="#" method="post">
+                    <div class="input-row">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-row">
+                        <select name="subject" required>
+                            <option value="" disabled selected>Subject</option>
+                            <option value="general-inquiry">General Inquiry</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="support">Support</option>
+                        </select>
+                    </div>
+                    <div class="input-row">
+                        <textarea name="message" rows="4" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="send-message-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="info-section">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-text">
+                        <h4>Address</h4>
+                        <p>Cure Bites, XYZ Street,<br>New Delhi, India</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="info-text">
+                        <h4>Phone</h4>
+                        <p>+8123894522</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p>support@curebites.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="info-text">
+                        <h4>Hours</h4>
+                        <p>Mon-Sat, 8 AM - 7 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <img src="https://t4.ftcdn.net/jpg/01/19/45/39/360_F_119453934_oUzksTZ1BoGoNbQff4oCuIUSbmOmIIcw.jpg" alt="Map of the location">
+        </div>
+    </main>
+
+</body>
+</html>
